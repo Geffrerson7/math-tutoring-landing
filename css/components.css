@@ -1,0 +1,823 @@
+/* ==========================================================================
+   COMPONENTES REUTILIZABLES
+   icon · btn · site-header · brand · site-nav · theme-switch · chip
+   ticker · accordion · choice · wa-float
+   ========================================================================== */
+
+/* Icono ------------------------------------------------------------------ */
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon--fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Botones ---------------------------------------------------------------- */
+.btn {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-heading);
+  --btn-border: var(--color-border-strong);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) ease,
+    color var(--dur-base) ease,
+    border-color var(--dur-base) ease;
+}
+
+/* Barrido de relleno en hover */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-color: var(--btn-sweep, var(--color-heading));
+  transform: translateY(101%);
+  transition: transform 420ms var(--ease-out);
+}
+
+.btn .icon--arrow {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -14px var(--color-shadow);
+  }
+
+  .btn:hover::before {
+    transform: translateY(0);
+  }
+
+  .btn:hover .icon--arrow {
+    transform: translateX(4px);
+  }
+
+  .btn--ghost:hover {
+    color: var(--color-bg);
+    border-color: var(--color-heading);
+  }
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn--primary {
+  --btn-bg: var(--color-accent);
+  --btn-fg: var(--color-on-accent);
+  --btn-border: var(--color-accent);
+  --btn-sweep: var(--color-accent-hover);
+}
+
+.btn--ghost {
+  --btn-sweep: var(--color-heading);
+}
+
+.btn--sm {
+  min-height: 2.6rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* Enlace con flecha */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-heading);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.link-arrow:hover {
+  background-size: 100% 1px;
+}
+
+.link-arrow .icon {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.link-arrow:hover .icon {
+  transform: translateX(4px);
+}
+
+/* Header ----------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+}
+
+/* El fondo translúcido vive en un pseudo-elemento: si backdrop-filter se
+   aplicara al propio header, este pasaría a ser el bloque contenedor del
+   menú móvil (position: fixed) y lo recortaría a la altura del header. */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--dur-base) ease,
+    border-color var(--dur-base) ease;
+}
+
+.site-header.is-scrolled::before,
+.site-header.is-menu-open::before {
+  background-color: var(--color-header-bg);
+  border-bottom-color: var(--color-border);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+
+/* Con el menú abierto, header y panel forman una misma lámina de vidrio */
+.site-header.is-menu-open::before {
+  background-color: var(--color-glass-bg);
+  border-bottom-color: var(--color-glass-border);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  backdrop-filter: blur(24px) saturate(1.6);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  height: 100%;
+}
+
+/* Logotipo tipográfico */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.brand__mark {
+  width: 2.25rem;
+  height: 2.25rem;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.brand:hover .brand__mark {
+  transform: rotate(90deg);
+}
+
+.brand__mark-frame {
+  fill: var(--color-heading);
+}
+
+.brand__mark-axis {
+  stroke: var(--color-bg);
+  stroke-width: 1.5;
+}
+
+.brand__mark-dot {
+  fill: var(--color-accent);
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+.brand__small {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.brand__name {
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Botón del menú móvil */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.6rem 0.5rem 1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-heading);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.js .nav-toggle {
+  display: inline-flex;
+}
+
+.nav-toggle__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  background-color: var(--color-heading);
+}
+
+.nav-toggle__icon span {
+  position: absolute;
+  width: 0.8rem;
+  height: 1.5px;
+  background-color: var(--color-bg);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.nav-toggle__icon span:first-child {
+  transform: translateY(-3px);
+}
+
+.nav-toggle__icon span:last-child {
+  transform: translateY(3px);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:first-child {
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:last-child {
+  transform: rotate(-45deg);
+}
+
+/* Navegación — móvil: panel desplegable */
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-lg);
+}
+
+.site-nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.site-nav__index {
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+
+.site-nav__tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+@media (max-width: 63.99em) {
+  .js .site-nav {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    z-index: 49;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(var(--space-md), 4vh, var(--space-xl));
+    padding: clamp(var(--space-sm), 3vh, var(--space-xl)) var(--gutter)
+      calc(clamp(var(--space-md), 4vh, var(--space-xl)) + env(safe-area-inset-bottom));
+    overflow-y: auto; /* solo como respaldo en pantallas muy bajas (móvil en horizontal) */
+    overscroll-behavior: contain;
+    /* Glassmorfismo: fondo translúcido + desenfoque + brillo lima sutil */
+    background-color: var(--color-glass-bg);
+    background-image:
+      radial-gradient(120% 60% at 100% 0%, var(--color-glass-glow), transparent 60%),
+      radial-gradient(90% 50% at 0% 100%, var(--color-glass-glow), transparent 65%);
+    border-top: 1px solid var(--color-glass-border);
+    box-shadow: inset 0 1px 0 var(--color-glass-border);
+    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    backdrop-filter: blur(24px) saturate(1.6);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition:
+      opacity var(--dur-base) var(--ease-out),
+      transform var(--dur-base) var(--ease-out),
+      visibility 0s linear var(--dur-base);
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .js .site-nav,
+    .site-header.is-menu-open::before {
+      background-color: var(--color-bg);
+    }
+  }
+
+  .js .site-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--dur-base) var(--ease-out),
+      transform var(--dur-base) var(--ease-out),
+      visibility 0s;
+  }
+
+  .js .site-nav__list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .js .site-nav__list li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .js .site-nav__link {
+    width: 100%;
+    padding-block: clamp(0.5rem, 1.6vh, 1rem);
+    font-size: min(clamp(1.75rem, 8vw, 2.6rem), 5.2vh);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .js .site-nav__tools {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+
+  .site-header__cta {
+    min-height: 3.25rem;
+  }
+
+  /* Sin JS: navegación visible bajo el header */
+  html:not(.js) .site-header {
+    height: auto;
+  }
+
+  html:not(.js) .site-header__inner {
+    flex-wrap: wrap;
+    padding-block: var(--space-md);
+  }
+}
+
+/* Navegación — escritorio: en línea */
+@media (min-width: 64em) {
+  .js .nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .site-nav__list {
+    gap: var(--space-lg);
+  }
+
+  .site-nav__link {
+    padding-block: 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .site-nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  .site-nav__link:hover::after,
+  .site-nav__link[aria-current="true"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Selector de tema -------------------------------------------------------- */
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg);
+}
+
+.theme-switch[hidden] {
+  display: none;
+}
+
+.theme-switch__btn {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+
+.theme-switch__btn .icon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.theme-switch__btn:hover {
+  color: var(--color-heading);
+}
+
+.theme-switch__btn[aria-pressed="true"] {
+  background-color: var(--color-heading);
+  color: var(--color-bg);
+}
+
+@media (max-width: 63.99em) {
+  .theme-switch {
+    align-self: flex-start;
+  }
+
+  .theme-switch__btn {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+/* Chip ------------------------------------------------------------------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-small);
+  line-height: 1.2;
+  color: var(--color-heading);
+  transition: background-color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* Ticker de operaciones -------------------------------------------------- */
+.ticker {
+  overflow: hidden;
+  padding-block: 1.15rem;
+  border-block: 1px solid var(--color-border);
+}
+
+.ticker__track {
+  display: flex;
+  width: max-content;
+}
+
+.ticker__list {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 2.75rem;
+  padding-right: 2.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.6rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: var(--color-heading);
+}
+
+.ticker__list li {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+.ticker__list li::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--color-accent);
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ticker__track {
+    animation: ticker 48s linear infinite;
+  }
+
+  .ticker:hover .ticker__track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Acordeón --------------------------------------------------------------- */
+.accordion__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion__item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.accordion__heading {
+  font-size: inherit;
+  letter-spacing: normal;
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  width: 100%;
+  padding: 1.4rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-heading);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.accordion__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  transition:
+    background-color var(--dur-base) ease,
+    border-color var(--dur-base) ease,
+    transform var(--dur-base) var(--ease-out);
+}
+
+.accordion__icon::before,
+.accordion__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.85rem;
+  height: 1.5px;
+  background-color: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.accordion__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.accordion__trigger:hover .accordion__icon {
+  border-color: var(--color-heading);
+}
+
+.accordion__item.is-open .accordion__icon {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+  transform: rotate(180deg);
+}
+
+.accordion__item.is-open .accordion__icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.accordion__panel-inner {
+  padding-bottom: 1.5rem;
+  max-width: 44rem;
+  color: var(--color-text-muted);
+}
+
+/* Con JS el panel se pliega; sin JS permanece visible */
+.js .accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows var(--dur-base) var(--ease-out),
+    visibility 0s linear var(--dur-base);
+}
+
+.js .accordion__item.is-open .accordion__panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition:
+    grid-template-rows var(--dur-base) var(--ease-out),
+    visibility 0s;
+}
+
+.js .accordion__panel > div {
+  overflow: hidden;
+}
+
+/* Opciones (radio segmentado) ------------------------------------------- */
+.choice {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.choice__legend {
+  margin-bottom: var(--space-sm);
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.choice__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.choice__option {
+  position: relative;
+}
+
+.choice__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.choice__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-heading);
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+
+.choice__label::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.choice__input:hover + .choice__label {
+  border-color: var(--color-heading);
+}
+
+.choice__input:checked + .choice__label {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.choice__input:checked + .choice__label::before {
+  background-color: currentColor;
+  transform: scale(1.15);
+}
+
+.choice__input:focus-visible + .choice__label {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* Botón flotante de WhatsApp (solo móvil/tablet) ------------------------- */
+.wa-float {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3.5rem;
+  padding: 0.7rem 1.15rem 0.7rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 14px 30px -12px var(--color-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1.5rem) scale(0.95);
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out),
+    visibility 0s linear var(--dur-base);
+}
+
+.wa-float .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.wa-float.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out),
+    visibility 0s;
+}
+
+@media (max-width: 63.99em) {
+  .js .wa-float {
+    display: inline-flex;
+  }
+}

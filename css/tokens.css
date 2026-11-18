@@ -1,0 +1,187 @@
+/* ==========================================================================
+   TOKENS DE DISEÑO — Clases con Gefferson
+   --------------------------------------------------------------------------
+   Única fuente de colores, tipografía, espaciado y movimiento.
+   Ningún otro archivo CSS contiene códigos de color.
+
+   Estructura:
+     1. Primitivas de paleta  (--p-*)      → valores hex de cada paleta
+     2. Tokens semánticos     (--color-*)  → tema claro / tema oscuro
+     3. Tipografía, espaciado, radios y movimiento
+
+   CAMBIAR DE PALETA
+     a) Duplica el bloque [data-palette="forest-lime"] con otro nombre
+        (p. ej. "midnight-cream" o "burgundy-sand") y ajusta sus valores.
+     b) Cambia data-palette="..." en la etiqueta <html> de index.html.
+     Los componentes no necesitan cambios: solo consumen --color-*.
+   ========================================================================== */
+
+/* 1. PRIMITIVAS ----------------------------------------------------------- */
+
+/* 02 · Forest & Lime (paleta inicial) */
+:root,
+[data-palette="forest-lime"] {
+  /* Paleta base */
+  --p-deep: #142D27;        /* verde oscuro principal */
+  --p-mid: #285447;         /* verde secundario */
+  --p-paper: #F1F0E8;       /* fondo claro */
+  --p-accent: #C6E36B;      /* lima de acento */
+  --p-ink: #26352F;         /* texto oscuro */
+
+  /* Derivados diseñados para cada tema (no son inversiones automáticas) */
+  --p-paper-2: #E6E5DA;     /* fondo alterno claro */
+  --p-paper-3: #FAF9F4;     /* superficie elevada clara */
+  --p-ink-soft: #4F5E57;    /* texto secundario sobre claro (≥ 5.5:1) */
+  --p-night: #0D1F1A;       /* fondo del tema oscuro */
+  --p-night-2: #12291F;     /* fondo alterno oscuro */
+  --p-night-3: #183A31;     /* superficie elevada oscura */
+  --p-mist: #E6E5DB;        /* texto principal en tema oscuro */
+  --p-mist-soft: #A9B8B0;   /* texto secundario sobre oscuro (≥ 5:1) */
+  --p-white: #FFFFFF;
+  --p-black: #000000;
+}
+
+/* Plantilla para próximas paletas (descomentar y completar):
+[data-palette="midnight-cream"] {
+  --p-deep: ; --p-mid: ; --p-paper: ; --p-accent: ; --p-ink: ;
+  --p-paper-2: ; --p-paper-3: ; --p-ink-soft: ;
+  --p-night: ; --p-night-2: ; --p-night-3: ;
+  --p-mist: ; --p-mist-soft: ;
+}
+*/
+
+/* 2. TOKENS SEMÁNTICOS ---------------------------------------------------- */
+
+/* Tema claro (por defecto) */
+:root {
+  color-scheme: light;
+
+  --color-bg: var(--p-paper);
+  --color-bg-alt: var(--p-paper-2);
+  --color-surface: var(--p-paper-3);
+  --color-heading: var(--p-deep);
+  --color-text: var(--p-ink);
+  --color-text-muted: var(--p-ink-soft);
+  --color-border: color-mix(in srgb, var(--p-ink) 16%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--p-ink) 38%, transparent);
+  --color-grid: color-mix(in srgb, var(--p-deep) 7%, transparent);
+  --color-line: color-mix(in srgb, var(--p-deep) 55%, transparent);
+
+  --color-accent: var(--p-accent);                 /* rellenos: CTA, puntos, detalles */
+  --color-accent-hover: color-mix(in srgb, var(--p-accent) 82%, var(--p-white));
+  --color-on-accent: var(--p-deep);
+  --color-accent-text: var(--p-mid);               /* acento usado como texto o trazo */
+
+  --color-brand: var(--p-deep);
+  --color-on-brand: var(--p-paper);
+  --color-focus: var(--p-mid);
+
+  --color-header-bg: color-mix(in srgb, var(--p-paper) 82%, transparent);
+  --color-glass-bg: color-mix(in srgb, var(--p-paper) 55%, transparent);      /* menú móvil (vidrio) */
+  --color-glass-border: color-mix(in srgb, var(--p-white) 60%, transparent);
+  --color-glass-glow: color-mix(in srgb, var(--p-accent) 30%, transparent);
+  --color-shadow: color-mix(in srgb, var(--p-deep) 18%, transparent);
+  --color-overlay: color-mix(in srgb, var(--p-deep) 40%, transparent);
+
+  /* Bandas de contraste (hero visual, ticker, secundaria, contacto) */
+  --color-band-bg: var(--p-deep);
+  --color-band-surface: color-mix(in srgb, var(--p-mid) 55%, var(--p-deep));
+  --color-band-heading: var(--p-paper);
+  --color-band-text: var(--p-mist);
+  --color-band-muted: var(--p-mist-soft);
+  --color-band-border: color-mix(in srgb, var(--p-paper) 16%, transparent);
+  --color-band-grid: color-mix(in srgb, var(--p-paper) 6%, transparent);
+  --color-band-line: color-mix(in srgb, var(--p-paper) 50%, transparent);
+  --color-band-accent-text: var(--p-accent);
+  --color-band-focus: var(--p-accent);
+
+  /* Color para <meta name="theme-color"> (lo lee main.js) */
+  --meta-theme-color: var(--p-paper);
+}
+
+/* Tema oscuro (lo aplica main.js según la elección del usuario o del sistema) */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: var(--p-night);
+  --color-bg-alt: var(--p-night-2);
+  --color-surface: var(--p-night-3);
+  --color-heading: var(--p-paper);
+  --color-text: var(--p-mist);
+  --color-text-muted: var(--p-mist-soft);
+  --color-border: color-mix(in srgb, var(--p-paper) 14%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--p-paper) 34%, transparent);
+  --color-grid: color-mix(in srgb, var(--p-paper) 5%, transparent);
+  --color-line: color-mix(in srgb, var(--p-paper) 45%, transparent);
+
+  --color-accent: var(--p-accent);
+  --color-accent-hover: color-mix(in srgb, var(--p-accent) 82%, var(--p-white));
+  --color-on-accent: var(--p-deep);
+  --color-accent-text: var(--p-accent);
+
+  --color-brand: var(--p-accent);
+  --color-on-brand: var(--p-deep);
+  --color-focus: var(--p-accent);
+
+  --color-header-bg: color-mix(in srgb, var(--p-night) 80%, transparent);
+  --color-glass-bg: color-mix(in srgb, var(--p-night) 55%, transparent);
+  --color-glass-border: color-mix(in srgb, var(--p-paper) 14%, transparent);
+  --color-glass-glow: color-mix(in srgb, var(--p-accent) 16%, transparent);
+  --color-shadow: color-mix(in srgb, var(--p-black) 45%, transparent);
+  --color-overlay: color-mix(in srgb, var(--p-black) 55%, transparent);
+
+  /* En oscuro las bandas suben de luminosidad (verde secundario) para
+     seguir diferenciándose de las superficies normales */
+  --color-band-bg: var(--p-mid);
+  --color-band-surface: color-mix(in srgb, var(--p-deep) 55%, var(--p-mid));
+  --color-band-heading: var(--p-paper);
+  --color-band-text: var(--p-mist);
+  --color-band-muted: color-mix(in srgb, var(--p-mist) 82%, var(--p-mid));
+  --color-band-border: color-mix(in srgb, var(--p-paper) 16%, transparent);
+  --color-band-grid: color-mix(in srgb, var(--p-paper) 6%, transparent);
+  --color-band-line: color-mix(in srgb, var(--p-paper) 50%, transparent);
+  --color-band-accent-text: var(--p-accent);
+  --color-band-focus: var(--p-accent);
+
+  --meta-theme-color: var(--p-night);
+}
+
+/* 3. TIPOGRAFÍA, ESPACIADO Y MOVIMIENTO --------------------------------- */
+:root {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --fs-hero: clamp(2.6rem, 1rem + 6vw, 6rem);
+  --fs-h2: clamp(2.15rem, 1.1rem + 4.2vw, 4.75rem);
+  --fs-h3: clamp(1.45rem, 1.15rem + 1.1vw, 2.1rem);
+  --fs-display-num: clamp(4rem, 2rem + 9vw, 9.5rem);
+  --fs-lead: clamp(1.075rem, 1rem + 0.35vw, 1.3rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-xs: 0.78rem;
+
+  --container: 1320px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --section-space: clamp(5rem, 3rem + 7vw, 9.5rem);
+  --header-h: 4.5rem;
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.25rem;
+  --space-2xl: 3.5rem;
+  --space-3xl: 5rem;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 800ms;
+}

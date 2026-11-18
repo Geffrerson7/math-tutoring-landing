@@ -1,0 +1,1604 @@
+<!doctype html>
+<html lang="es-PE" data-palette="forest-lime" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>
+      Clases de matemática en Villa El Salvador | Clases con Gefferson
+    </title>
+    <meta
+      name="description"
+      content="Clases particulares de matemática para primaria y secundaria en Villa El Salvador, Lima. Presencial a domicilio o virtual, con explicaciones claras y ejercicios paso a paso."
+    />
+    <meta name="author" content="Gefferson" />
+    <meta name="robots" content="index, follow" />
+    <!-- Cuando exista dominio definitivo, descomentar y actualizar:
+  <link rel="canonical" href="https://www.tu-dominio.pe/">
+  -->
+
+    <!-- Open Graph / redes sociales.
+       Al publicar, reemplazar las rutas relativas por URLs absolutas del dominio. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:site_name" content="Clases con Gefferson" />
+    <meta
+      property="og:title"
+      content="Clases particulares de matemática en Villa El Salvador | Clases con Gefferson"
+    />
+    <meta
+      property="og:description"
+      content="Matemática para primaria y secundaria, presencial a domicilio o virtual. Aprende paso a paso y a tu propio ritmo."
+    />
+    <meta property="og:image" content="assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Clases con Gefferson: aprende matemática con confianza y a tu propio ritmo."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- main.js sincroniza este valor con el tema activo -->
+    <meta name="theme-color" content="#F1F0E8" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Tema: se resuelve antes del primer render para evitar parpadeo -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var pref = "system";
+        try {
+          pref = localStorage.getItem("cg-theme") || "system";
+        } catch (e) {}
+        if (pref !== "light" && pref !== "dark") pref = "system";
+        var dark =
+          pref === "dark" ||
+          (pref === "system" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        root.setAttribute("data-theme", dark ? "dark" : "light");
+        root.setAttribute("data-theme-pref", pref);
+        root.classList.add("js");
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Space+Grotesk:wght@400..700&display=swap"
+    />
+
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+
+    <script src="js/config.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Sprite de iconos SVG -->
+    <svg
+      width="0"
+      height="0"
+      style="position: absolute"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <symbol id="i-wa" viewBox="0 0 24 24">
+        <path
+          d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41Z"
+        />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M4 12h15M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24">
+        <path d="M12 20V5M6 11l6-6 6 6" />
+      </symbol>
+      <symbol id="i-arrow-ne" viewBox="0 0 24 24">
+        <path d="M7 17 17 7M8 7h9v9" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2.5" />
+        <path d="m4 7 8 6 8-6" />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path
+          d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"
+        />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path
+          d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.57v-2.04c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .3"
+        />
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+        />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" />
+      </symbol>
+      <symbol id="i-system" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="M3 11 12 4l9 7" />
+        <path d="M5 10v10h14V10" />
+        <path d="M10 20v-5h4v5" />
+      </symbol>
+      <symbol id="i-video" viewBox="0 0 24 24">
+        <rect x="2.5" y="6" width="13" height="12" rx="2" />
+        <path d="m15.5 10.5 6-3.5v10l-6-3.5" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header" data-header>
+      <div class="container site-header__inner">
+        <a
+          class="brand"
+          href="#inicio"
+          aria-label="Clases con Gefferson, ir al inicio"
+        >
+          <svg class="brand__mark" viewBox="0 0 36 36" aria-hidden="true">
+            <rect class="brand__mark-frame" width="36" height="36" rx="9" />
+            <path class="brand__mark-axis" d="M10 7v19h19" fill="none" />
+            <path
+              class="brand__mark-axis"
+              d="M10 26 24 12"
+              fill="none"
+              stroke-dasharray="2 3"
+            />
+            <circle class="brand__mark-dot" cx="24" cy="12" r="4" />
+          </svg>
+          <span class="brand__text">
+            <span class="brand__small">Clases con</span>
+            <span class="brand__name">Gefferson</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-nav-toggle
+        >
+          <span data-nav-toggle-label>Menú</span>
+          <span class="nav-toggle__icon" aria-hidden="true"
+            ><span></span><span></span
+          ></span>
+        </button>
+
+        <nav
+          class="site-nav"
+          id="site-nav"
+          aria-label="Navegación principal"
+          data-nav
+        >
+          <ul class="site-nav__list">
+            <li>
+              <a class="site-nav__link" href="#inicio"
+                ><span class="site-nav__index" aria-hidden="true">01</span
+                >Inicio</a
+              >
+            </li>
+            <li>
+              <a class="site-nav__link" href="#sobre-mi"
+                ><span class="site-nav__index" aria-hidden="true">02</span>Sobre
+                mí</a
+              >
+            </li>
+            <li>
+              <a class="site-nav__link" href="#clases"
+                ><span class="site-nav__index" aria-hidden="true">03</span
+                >Clases</a
+              >
+            </li>
+            <li>
+              <a class="site-nav__link" href="#tarifas"
+                ><span class="site-nav__index" aria-hidden="true">04</span
+                >Tarifas</a
+              >
+            </li>
+            <li>
+              <a class="site-nav__link" href="#contacto"
+                ><span class="site-nav__index" aria-hidden="true">05</span
+                >Contacto</a
+              >
+            </li>
+          </ul>
+
+          <div class="site-nav__tools">
+            <div
+              class="theme-switch"
+              role="group"
+              aria-label="Tema de color"
+              data-theme-switch
+              hidden
+            >
+              <button
+                class="theme-switch__btn"
+                type="button"
+                data-theme-option="light"
+                aria-pressed="false"
+                title="Tema claro"
+              >
+                <svg class="icon" aria-hidden="true"><use href="#i-sun" /></svg>
+                <span class="visually-hidden">Tema claro</span>
+              </button>
+              <button
+                class="theme-switch__btn"
+                type="button"
+                data-theme-option="dark"
+                aria-pressed="false"
+                title="Tema oscuro"
+              >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-moon" />
+                </svg>
+                <span class="visually-hidden">Tema oscuro</span>
+              </button>
+              <button
+                class="theme-switch__btn"
+                type="button"
+                data-theme-option="system"
+                aria-pressed="false"
+                title="Tema del sistema"
+              >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-system" />
+                </svg>
+                <span class="visually-hidden">Tema del sistema</span>
+              </button>
+            </div>
+
+            <a
+              class="btn btn--primary btn--sm site-header__cta"
+              data-wa="general"
+              href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon icon--fill" aria-hidden="true">
+                <use href="#i-wa" />
+              </svg>
+              WhatsApp
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- ================= HERO ================= -->
+      <section
+        class="hero grid-paper"
+        id="inicio"
+        aria-labelledby="hero-title"
+        data-nav-section="inicio"
+        data-hero
+      >
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <p class="hero__eyebrow">
+              <span class="hero__dot" aria-hidden="true"></span>
+              Clases particulares de matemática · Lima, Perú
+            </p>
+
+            <h1 class="hero__title" id="hero-title">
+              <span class="hero__word" style="--i: 0">Aprende</span>
+              <span class="hero__word" style="--i: 1">matemática</span>
+              <span class="hero__word" style="--i: 2">con</span>
+              <span class="hero__word hero__mark" style="--i: 3"
+                >confianza</span
+              >
+              <span class="hero__word" style="--i: 4">y</span>
+              <span class="hero__word" style="--i: 5">a</span>
+              <span class="hero__word" style="--i: 6">tu</span>
+              <span class="hero__word" style="--i: 7">propio</span>
+              <span class="hero__word" style="--i: 8">ritmo.</span>
+            </h1>
+
+            <p class="hero__lead">
+              Clases particulares de matemática para estudiantes de primaria y
+              secundaria. Aprende paso a paso, refuerza tus conocimientos y
+              desarrolla tus habilidades matemáticas.
+            </p>
+
+            <div class="hero__actions">
+              <a
+                class="btn btn--primary"
+                data-wa="general"
+                href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="icon icon--fill" aria-hidden="true">
+                  <use href="#i-wa" />
+                </svg>
+                Solicitar una clase
+              </a>
+              <a class="btn btn--ghost" href="#clases">
+                Conocer las clases
+                <svg class="icon icon--arrow" aria-hidden="true">
+                  <use href="#i-arrow" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="hero__board band grid-paper">
+              <!-- Teorema de Tales: todo triángulo inscrito sobre un diámetro es rectángulo -->
+              <svg
+                class="geo"
+                viewBox="0 0 480 480"
+                role="img"
+                aria-labelledby="geo-title"
+              >
+                <title id="geo-title">
+                  Diagrama geométrico: triángulo rectángulo inscrito en una
+                  circunferencia
+                </title>
+                <path class="geo__axis" d="M48 440V36M48 440h400" />
+                <path
+                  class="geo__ticks"
+                  d="M88 440v6M128 440v6M168 440v6M208 440v6M248 440v6M288 440v6M328 440v6M368 440v6M408 440v6M42 400h6M42 360h6M42 320h6M42 280h6M42 240h6M42 200h6M42 160h6M42 120h6M42 80h6"
+                />
+                <circle
+                  class="geo__circle"
+                  cx="240"
+                  cy="250"
+                  r="150"
+                  pathLength="1"
+                />
+                <path class="geo__diameter" d="M90 250h300" />
+                <path
+                  class="geo__triangle"
+                  d="M90 250 315 120.1 390 250Z"
+                  pathLength="1"
+                />
+                <path
+                  class="geo__right"
+                  d="M299.4 129.1 308.4 144.7 324 135.7"
+                />
+                <g class="geo__radius">
+                  <path d="M240 250h150" />
+                  <circle cx="390" cy="250" r="4.5" />
+                </g>
+                <circle class="geo__point" cx="90" cy="250" r="5" />
+                <circle class="geo__point" cx="390" cy="250" r="5" />
+                <circle
+                  class="geo__point geo__point--center"
+                  cx="240"
+                  cy="250"
+                  r="3.5"
+                />
+                <circle
+                  class="geo__point geo__point--accent"
+                  cx="315"
+                  cy="120.1"
+                  r="7"
+                />
+                <text class="geo__label" x="66" y="242">A</text>
+                <text class="geo__label" x="400" y="242">B</text>
+                <text class="geo__label" x="324" y="104">C</text>
+                <text class="geo__label geo__label--sm" x="232" y="274">O</text>
+                <text class="geo__label geo__label--sm" x="266" y="166">
+                  90°
+                </text>
+                <text class="geo__label geo__label--formula" x="70" y="72">
+                  a² + b² = c²
+                </text>
+              </svg>
+            </div>
+
+            <div class="hero__card" aria-hidden="true">
+              <p class="hero__card-title">Paso a paso</p>
+              <ol class="hero__steps">
+                <li style="--s: 0">2x + 3 = 11</li>
+                <li style="--s: 1">2x = 11 − 3</li>
+                <li style="--s: 2">2x = 8</li>
+                <li style="--s: 3"><strong>x = 4</strong></li>
+              </ol>
+            </div>
+          </div>
+
+          <ul class="hero__facts" role="list">
+            <li class="hero__fact">
+              <span class="hero__fact-index" aria-hidden="true">01</span>
+              <span class="hero__fact-title">Presencial y virtual</span>
+              <span class="hero__fact-text"
+                >A domicilio o por videollamada</span
+              >
+            </li>
+            <li class="hero__fact">
+              <span class="hero__fact-index" aria-hidden="true">02</span>
+              <span class="hero__fact-title">Villa El Salvador</span>
+              <span class="hero__fact-text"
+                >Atención presencial en Lima, Perú</span
+              >
+            </li>
+            <li class="hero__fact">
+              <span class="hero__fact-index" aria-hidden="true">03</span>
+              <span class="hero__fact-title">Primaria y secundaria</span>
+              <span class="hero__fact-text"
+                >Matemática para cada etapa escolar</span
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Ticker decorativo de operaciones -->
+      <div class="ticker band" aria-hidden="true">
+        <div class="ticker__track">
+          <ul class="ticker__list">
+            <li>a² + b² = c²</li>
+            <li>½ + ¼ = ¾</li>
+            <li>25 % de 80 = 20</li>
+            <li>2x + 3 = 11</li>
+            <li>π ≈ 3,1416</li>
+            <li>√144 = 12</li>
+            <li>sen²θ + cos²θ = 1</li>
+            <li>0,75 = ¾</li>
+            <li>(a + b)² = a² + 2ab + b²</li>
+          </ul>
+          <ul class="ticker__list">
+            <li>a² + b² = c²</li>
+            <li>½ + ¼ = ¾</li>
+            <li>25 % de 80 = 20</li>
+            <li>2x + 3 = 11</li>
+            <li>π ≈ 3,1416</li>
+            <li>√144 = 12</li>
+            <li>sen²θ + cos²θ = 1</li>
+            <li>0,75 = ¾</li>
+            <li>(a + b)² = a² + 2ab + b²</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ================= SOBRE MÍ ================= -->
+      <section
+        class="section about"
+        id="sobre-mi"
+        aria-labelledby="about-title"
+        data-nav-section="sobre-mi"
+      >
+        <div class="container about__grid">
+          <figure class="about__media" data-reveal>
+            <!-- Para cambiar la foto, reemplaza assets/foto-perfil.webp (ideal: cuadrada o 4:5, ≥ 640 px). -->
+            <div class="about__frame">
+              <img
+                class="about__photo"
+                src="assets/foto-perfil.webp"
+                alt="Retrato de Gefferson Casasola, Ingeniero Electrónico y profesor de matemática"
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="about__dot" aria-hidden="true"></span>
+            </div>
+            <figcaption class="about__caption">
+              <span class="about__caption-name">Gefferson Casasola</span>
+              <span>Ingeniero Electrónico · Clases de matemática</span>
+            </figcaption>
+          </figure>
+
+          <div class="about__content">
+            <p class="section-label" data-reveal>
+              <span class="section-label__index">02</span>Sobre mí
+            </p>
+            <h2 class="section-title" id="about-title" data-reveal>
+              Hola, soy Gefferson.
+            </h2>
+            <p class="about__lead" data-reveal>
+              Soy <strong>Ingeniero Electrónico</strong> y
+              <strong>Desarrollador Full Stack</strong> en Lima, Perú, y me
+              apasiona compartir mis conocimientos para ayudar a estudiantes a
+              comprender las matemáticas sin frustraciones. Mi enfoque consiste
+              en explicar los conceptos desde la base, resolver ejercicios paso
+              a paso y demostrar cómo la lógica matemática impulsa la ingeniería
+              y la tecnología real.
+            </p>
+            <p class="about__text" data-reveal>
+              Mi experiencia en el desarrollo de software, análisis de datos e
+              inteligencia artificial me permite enseñar a razonar con
+              estructura y claridad. Acompaño a cada estudiante con calma,
+              practicando juntos y adaptando el ritmo hasta que cada tema quede
+              completamente dominado.
+            </p>
+
+            <ul class="traits" role="list">
+              <li class="trait" data-reveal style="--reveal-delay: 0">
+                <span class="trait__symbol" aria-hidden="true">=</span>
+                <span class="trait__title">Explicaciones claras</span>
+                <span class="trait__text"
+                  >Conceptos explicados con lenguaje sencillo, orden lógico y
+                  ejemplos reales de ingeniería.</span
+                >
+              </li>
+              <li class="trait" data-reveal style="--reveal-delay: 1">
+                <span class="trait__symbol" aria-hidden="true">∞</span>
+                <span class="trait__title">Paciencia y ritmo propio</span>
+                <span class="trait__text"
+                  >Un espacio seguro para preguntar todas las veces necesarias y
+                  avanzar paso a paso.</span
+                >
+              </li>
+              <li class="trait" data-reveal style="--reveal-delay: 2">
+                <span class="trait__symbol" aria-hidden="true">✓</span>
+                <span class="trait__title">Pensamiento analítico</span>
+                <span class="trait__text"
+                  >Práctica guiada para descomponer problemas complejos en pasos
+                  simples y manejables.</span
+                >
+              </li>
+              <li class="trait" data-reveal style="--reveal-delay: 3">
+                <span class="trait__symbol" aria-hidden="true">f(x)</span>
+                <span class="trait__title">Clases a medida</span>
+                <span class="trait__text"
+                  >Sesiones personalizadas enfocadas exactamente en los temas
+                  que necesitas reforzar.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CLASES ================= -->
+      <section
+        class="section services"
+        id="clases"
+        aria-labelledby="services-title"
+        data-nav-section="clases"
+      >
+        <div class="container">
+          <header class="services__head">
+            <p class="section-label" data-reveal>
+              <span class="section-label__index">03</span>Clases
+            </p>
+            <h2 class="section-title" id="services-title" data-reveal>
+              Matemática para cada etapa escolar.
+            </h2>
+            <p class="section-lead" data-reveal>
+              Dos líneas de trabajo con objetivos distintos: construir bases
+              sólidas en primaria y comprender a fondo los conceptos en
+              secundaria.
+            </p>
+          </header>
+
+          <div class="services__grid">
+            <article
+              class="level-card level-card--primaria"
+              aria-labelledby="primaria-title"
+              data-reveal
+            >
+              <div class="level-card__top">
+                <span class="level-card__tag">Nivel 01</span>
+                <svg
+                  class="level-card__art"
+                  viewBox="0 0 160 120"
+                  aria-hidden="true"
+                >
+                  <circle class="level-card__art-line" cx="60" cy="60" r="44" />
+                  <path
+                    class="level-card__art-fill"
+                    d="M60 60V16a44 44 0 1 1-44 44Z"
+                  />
+                  <text class="level-card__art-text" x="118" y="76">¾</text>
+                </svg>
+              </div>
+              <h3 class="level-card__title" id="primaria-title">
+                Matemática para primaria
+              </h3>
+              <p class="level-card__desc">
+                Refuerza las bases matemáticas y desarrolla confianza al
+                resolver ejercicios.
+              </p>
+              <p class="level-card__topics-label">Temas de referencia</p>
+              <ul class="chip-list" role="list">
+                <li class="chip">Operaciones básicas</li>
+                <li class="chip">Fracciones</li>
+                <li class="chip">Decimales</li>
+                <li class="chip">Porcentajes</li>
+                <li class="chip">Resolución de problemas</li>
+                <li class="chip">Introducción a geometría</li>
+              </ul>
+              <div class="level-card__foot">
+                <p class="level-card__price">
+                  <strong data-price="primaria">S/ 28</strong> por hora
+                </p>
+                <a
+                  class="btn btn--primary"
+                  data-wa="primaria"
+                  href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica%20para%20primaria.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar por primaria
+                  <svg class="icon icon--arrow" aria-hidden="true">
+                    <use href="#i-arrow" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="level-card level-card--secundaria band"
+              aria-labelledby="secundaria-title"
+              data-reveal
+              style="--reveal-delay: 1"
+            >
+              <div class="level-card__top">
+                <span class="level-card__tag">Nivel 02</span>
+                <svg
+                  class="level-card__art"
+                  viewBox="0 0 160 120"
+                  aria-hidden="true"
+                >
+                  <path class="level-card__art-line" d="M4 60h152M20 10v100" />
+                  <path
+                    class="level-card__art-wave"
+                    d="M4 60c12-40 26-40 38 0s26 40 38 0 26-40 38 0 26 40 38 0"
+                  />
+                  <text class="level-card__art-text" x="104" y="34">x²</text>
+                </svg>
+              </div>
+              <h3 class="level-card__title" id="secundaria-title">
+                Matemática para secundaria
+              </h3>
+              <p class="level-card__desc">
+                Comprende los conceptos matemáticos y practica mediante
+                ejercicios explicados paso a paso.
+              </p>
+              <p class="level-card__topics-label">Temas de referencia</p>
+              <ul class="chip-list" role="list">
+                <li class="chip">Aritmética</li>
+                <li class="chip">Álgebra</li>
+                <li class="chip">Ecuaciones</li>
+                <li class="chip">Geometría</li>
+                <li class="chip">Trigonometría</li>
+                <li class="chip">Razonamiento matemático</li>
+              </ul>
+              <div class="level-card__foot">
+                <p class="level-card__price">
+                  <strong data-price="secundaria">S/ 33</strong> por hora
+                </p>
+                <a
+                  class="btn btn--primary"
+                  data-wa="secundaria"
+                  href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica%20para%20secundaria.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar por secundaria
+                  <svg class="icon icon--arrow" aria-hidden="true">
+                    <use href="#i-arrow" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <p class="note services__note" data-reveal>
+            Los temas son referenciales: se confirman al coordinar la primera
+            clase, según lo que necesite el estudiante.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= METODOLOGÍA ================= -->
+      <section
+        class="section method"
+        id="metodologia"
+        aria-labelledby="method-title"
+        data-nav-section="clases"
+      >
+        <div class="container">
+          <header class="method__head">
+            <p class="section-label" data-reveal>
+              <span class="section-label__index">04</span>Metodología
+            </p>
+            <h2 class="section-title" id="method-title" data-reveal>
+              Aprender matemática paso a paso.
+            </h2>
+            <p class="section-lead" data-reveal>
+              Cada clase se adapta al nivel y al ritmo de aprendizaje del
+              estudiante. Avanzamos cuando el tema está claro.
+            </p>
+          </header>
+
+          <div class="method__chart" data-steps>
+            <span class="method__axis method__axis--y" aria-hidden="true"
+              >comprensión ↑</span
+            >
+            <ol class="method__steps" role="list">
+              <li class="method-step" style="--step: 0">
+                <span class="method-step__num" aria-hidden="true">01</span>
+                <h3 class="method-step__title">
+                  Identificar las dificultades del estudiante
+                </h3>
+                <p class="method-step__text">
+                  Conversamos y revisamos qué temas le cuestan más.
+                </p>
+              </li>
+              <li class="method-step" style="--step: 1">
+                <span class="method-step__num" aria-hidden="true">02</span>
+                <h3 class="method-step__title">
+                  Explicar los conceptos de forma sencilla
+                </h3>
+                <p class="method-step__text">
+                  Con ejemplos claros y un lenguaje cercano.
+                </p>
+              </li>
+              <li class="method-step" style="--step: 2">
+                <span class="method-step__num" aria-hidden="true">03</span>
+                <h3 class="method-step__title">
+                  Resolver ejercicios paso a paso
+                </h3>
+                <p class="method-step__text">
+                  Cada procedimiento se desarrolla con calma, sin saltarse
+                  pasos.
+                </p>
+              </li>
+              <li class="method-step method-step--last" style="--step: 3">
+                <span class="method-step__num" aria-hidden="true">04</span>
+                <h3 class="method-step__title">
+                  Practicar y reforzar los conocimientos
+                </h3>
+                <p class="method-step__text">
+                  Más ejercicios para afianzar lo aprendido.
+                </p>
+              </li>
+            </ol>
+            <span class="method__axis method__axis--x" aria-hidden="true"
+              >clases →</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= DIAGNÓSTICO GRATUITO ================= -->
+      <section
+        class="section diagnostic band grid-paper"
+        id="diagnostico"
+        aria-labelledby="diagnostic-title"
+        data-nav-section="clases"
+      >
+        <div class="container">
+          <div class="diagnostic__head">
+            <div class="diagnostic__intro">
+              <p class="section-label" data-reveal>
+                <span class="section-label__index">05</span>Diagnóstico gratuito
+              </p>
+              <h2 class="section-title" id="diagnostic-title" data-reveal>
+                Antes de decidir, conoce cómo aprendemos.
+              </h2>
+              <p class="section-lead" data-reveal>
+                Una sesión de diagnóstico gratuita y sin compromiso: identificamos qué
+                necesita reforzar el estudiante, vives la metodología con un ejercicio
+                real y te llevas una propuesta de plan de estudio.
+              </p>
+            </div>
+
+            <div class="diagnostic__stat" data-reveal style="--reveal-delay: 1">
+              <p class="diagnostic__number" aria-hidden="true">30<span>min</span></p>
+              <ul class="diagnostic__badges" role="list">
+                <li class="chip">Gratis</li>
+                <li class="chip">30 minutos</li>
+                <li class="chip">Sin compromiso</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Recta numérica: cada tramo es proporcional a su duración -->
+          <div class="diag-ruler" data-reveal aria-hidden="true">
+            <span class="diag-ruler__seg diag-ruler__seg--1"></span>
+            <span class="diag-ruler__seg diag-ruler__seg--2"></span>
+            <span class="diag-ruler__seg diag-ruler__seg--3"></span>
+            <span class="diag-ruler__tick" style="--at: 0">0</span>
+            <span class="diag-ruler__tick" style="--at: 10">10</span>
+            <span class="diag-ruler__tick" style="--at: 25">25</span>
+            <span class="diag-ruler__tick" style="--at: 30">30 min</span>
+          </div>
+
+          <ol class="diag-steps" role="list">
+            <li class="diag-step diag-step--1" data-reveal>
+              <span class="diag-step__time">Minutos 0–10</span>
+              <h3 class="diag-step__title">Conversación inicial</h3>
+              <p class="diag-step__text">
+                Conocemos los objetivos, el nivel actual y los temas que más le cuestan
+                al estudiante.
+              </p>
+            </li>
+            <li class="diag-step diag-step--2" data-reveal style="--reveal-delay: 1">
+              <span class="diag-step__time">Minutos 10–25</span>
+              <h3 class="diag-step__title">Ejercicio guiado</h3>
+              <p class="diag-step__text">
+                Explicación práctica y resolución paso a paso de un ejercicio muestra,
+                para que conozcas mi forma de enseñar.
+              </p>
+            </li>
+            <li class="diag-step diag-step--3" data-reveal style="--reveal-delay: 2">
+              <span class="diag-step__time">Minutos 25–30</span>
+              <h3 class="diag-step__title">Plan personalizado</h3>
+              <p class="diag-step__text">
+                Te propongo un plan de estudio según las necesidades del estudiante.
+              </p>
+            </li>
+          </ol>
+
+          <div class="diagnostic__foot">
+            <aside
+              class="diagnostic__note"
+              aria-label="Requisito para reservar"
+              data-reveal
+            >
+              <span class="diagnostic__note-icon" aria-hidden="true">!</span>
+              <p>
+                <strong>Para aprovechar los 30 minutos:</strong> al reservar, envía con
+                anticipación el tema o sílabo que deseas revisar. Así preparo un
+                ejercicio acorde; la sesión se centra en el diagnóstico y en conocer la
+                metodología.
+              </p>
+            </aside>
+
+            <div class="diagnostic__actions" data-reveal style="--reveal-delay: 1">
+              <a
+                class="btn btn--primary"
+                data-wa="diagnostico"
+                href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20quisiera%20reservar%20la%20sesi%C3%B3n%20de%20diagn%C3%B3stico%20gratuita%20de%2030%20minutos.%20Nivel%20del%20estudiante%3A%20___.%20Tema%20o%20s%C3%ADlabo%20que%20deseamos%20revisar%3A%20___."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="icon icon--fill" aria-hidden="true">
+                  <use href="#i-wa" />
+                </svg>
+                Reservar diagnóstico gratuito
+              </a>
+              <a class="link-arrow" href="#contacto">
+                Ver datos de contacto
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MODALIDADES ================= -->
+      <section
+        class="section modes"
+        id="modalidades"
+        aria-labelledby="modes-title"
+        data-nav-section="clases"
+      >
+        <div class="container">
+          <header class="modes__head">
+            <p class="section-label" data-reveal>
+              <span class="section-label__index">06</span>Modalidades
+            </p>
+            <h2 class="section-title" id="modes-title" data-reveal>
+              Presencial o virtual: elige cómo aprender.
+            </h2>
+          </header>
+
+          <div class="venn">
+            <svg
+              class="venn__diagram"
+              viewBox="0 0 1000 600"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <defs>
+                <clipPath id="venn-clip">
+                  <circle cx="300" cy="300" r="298" />
+                </clipPath>
+              </defs>
+              <circle class="venn__circle" cx="300" cy="300" r="298" />
+              <circle class="venn__circle" cx="700" cy="300" r="298" />
+              <circle
+                class="venn__lens"
+                cx="700"
+                cy="300"
+                r="298"
+                clip-path="url(#venn-clip)"
+              />
+            </svg>
+
+            <div class="venn__set venn__set--a" data-reveal>
+              <span class="venn__symbol" aria-hidden="true">P</span>
+              <svg class="icon venn__icon" aria-hidden="true">
+                <use href="#i-home" />
+              </svg>
+              <h3 class="venn__title">Presencial</h3>
+              <ul class="venn__list">
+                <li>Clases a domicilio.</li>
+                <li>Atención en Villa El Salvador.</li>
+                <li>
+                  El costo de desplazamiento puede depender de la ubicación
+                  exacta.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="venn__set venn__set--both"
+              data-reveal
+              style="--reveal-delay: 1"
+            >
+              <span class="venn__symbol" aria-hidden="true">P ∩ V</span>
+              <h3 class="venn__title">En ambas</h3>
+              <ul class="venn__list">
+                <li>Horario coordinado previamente.</li>
+                <li>Ejercicios explicados paso a paso.</li>
+              </ul>
+            </div>
+
+            <div
+              class="venn__set venn__set--b"
+              data-reveal
+              style="--reveal-delay: 2"
+            >
+              <span class="venn__symbol" aria-hidden="true">V</span>
+              <svg class="icon venn__icon" aria-hidden="true">
+                <use href="#i-video" />
+              </svg>
+              <h3 class="venn__title">Virtual</h3>
+              <ul class="venn__list">
+                <li>Clases mediante videollamada.</li>
+                <li>Explicaciones y resolución de ejercicios.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TARIFAS ================= -->
+      <section
+        class="section pricing"
+        id="tarifas"
+        aria-labelledby="pricing-title"
+        data-nav-section="tarifas"
+      >
+        <div class="container">
+          <header class="pricing__head">
+            <p class="section-label" data-reveal>
+              <span class="section-label__index">07</span>Tarifas
+            </p>
+            <h2 class="section-title" id="pricing-title" data-reveal>
+              Clases particulares a precios accesibles.
+            </h2>
+            <p class="section-lead" data-reveal>
+              Tarifa base por hora según el nivel del estudiante. Sin costos
+              ocultos.
+            </p>
+          </header>
+
+          <div class="pricing__grid">
+            <article
+              class="price-card"
+              aria-labelledby="price-primaria"
+              data-reveal
+            >
+              <div class="price-card__head">
+                <h3 class="price-card__level" id="price-primaria">Primaria</h3>
+                <span class="price-card__eq" aria-hidden="true"
+                  >1 h = <span data-price="primaria">S/ 28</span></span
+                >
+              </div>
+              <p class="price-card__price">
+                <span class="price-card__amount" data-price="primaria"
+                  >S/ 28</span
+                >
+                <span class="price-card__unit">por hora</span>
+              </p>
+              <p class="price-card__text">
+                Tarifa base para estudiantes de primaria.
+              </p>
+              <a
+                class="btn btn--primary btn--block"
+                data-wa="primaria"
+                href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica%20para%20primaria.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="icon icon--fill" aria-hidden="true">
+                  <use href="#i-wa" />
+                </svg>
+                Consultar disponibilidad<span class="visually-hidden">
+                  para primaria</span
+                >
+              </a>
+            </article>
+
+            <article
+              class="price-card band"
+              aria-labelledby="price-secundaria"
+              data-reveal
+              style="--reveal-delay: 1"
+            >
+              <div class="price-card__head">
+                <h3 class="price-card__level" id="price-secundaria">
+                  Secundaria
+                </h3>
+                <span class="price-card__eq" aria-hidden="true"
+                  >1 h = <span data-price="secundaria">S/ 33</span></span
+                >
+              </div>
+              <p class="price-card__price">
+                <span class="price-card__amount" data-price="secundaria"
+                  >S/ 33</span
+                >
+                <span class="price-card__unit">por hora</span>
+              </p>
+              <p class="price-card__text">
+                Tarifa base para estudiantes de secundaria.
+              </p>
+              <a
+                class="btn btn--primary btn--block"
+                data-wa="secundaria"
+                href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica%20para%20secundaria.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="icon icon--fill" aria-hidden="true">
+                  <use href="#i-wa" />
+                </svg>
+                Consultar disponibilidad<span class="visually-hidden">
+                  para secundaria</span
+                >
+              </a>
+            </article>
+
+            <aside
+              class="pricing__terms"
+              aria-labelledby="terms-title"
+              data-reveal
+              style="--reveal-delay: 2"
+            >
+              <h3 class="pricing__terms-title" id="terms-title">
+                Condiciones claras
+              </h3>
+              <ul class="pricing__terms-list">
+                <li>
+                  Los precios corresponden a la tarifa base por hora de clase.
+                </li>
+                <li>
+                  En clases presenciales, las condiciones de desplazamiento se
+                  coordinan previamente según la ubicación exacta.
+                </li>
+                <li>
+                  Antes de reservar, consulta la disponibilidad de horario por
+                  WhatsApp.
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PREGUNTAS FRECUENTES ================= -->
+      <section class="section faq" id="preguntas" aria-labelledby="faq-title">
+        <div class="container faq__grid">
+          <header class="faq__head">
+            <p class="section-label" data-reveal>
+              <span class="section-label__index">08</span>Preguntas
+            </p>
+            <h2 class="section-title" id="faq-title" data-reveal>
+              Preguntas frecuentes
+            </h2>
+            <p class="faq__aside" data-reveal>
+              ¿Tienes otra duda?
+              <a
+                class="link-arrow"
+                data-wa="general"
+                href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Escríbeme por WhatsApp
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow" />
+                </svg>
+              </a>
+            </p>
+          </header>
+
+          <div class="accordion" data-accordion>
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-1-btn"
+                  aria-expanded="false"
+                  aria-controls="faq-1"
+                >
+                  ¿Qué niveles educativos atiendes?
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-1"
+                role="region"
+                aria-labelledby="faq-1-btn"
+              >
+                <div>
+                  <div class="accordion__panel-inner">
+                    <p>
+                      Brindo clases particulares de matemática para estudiantes
+                      de primaria y secundaria.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-2-btn"
+                  aria-expanded="false"
+                  aria-controls="faq-2"
+                >
+                  ¿Las clases son presenciales o virtuales?
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-2"
+                role="region"
+                aria-labelledby="faq-2-btn"
+              >
+                <div>
+                  <div class="accordion__panel-inner">
+                    <p>
+                      Ambas. Las clases presenciales son a domicilio y las
+                      virtuales se realizan mediante videollamada. En las dos
+                      modalidades el horario se coordina previamente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-3-btn"
+                  aria-expanded="false"
+                  aria-controls="faq-3"
+                >
+                  ¿En qué zonas brindas clases?
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-3"
+                role="region"
+                aria-labelledby="faq-3-btn"
+              >
+                <div>
+                  <div class="accordion__panel-inner">
+                    <p>
+                      Las clases presenciales se brindan principalmente en Villa
+                      El Salvador, Lima. Si vives en una zona cercana, escríbeme
+                      por WhatsApp para consultar. Las clases virtuales no
+                      requieren desplazamiento.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-4-btn"
+                  aria-expanded="false"
+                  aria-controls="faq-4"
+                >
+                  ¿Cuánto cuesta una hora de clase?
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-4"
+                role="region"
+                aria-labelledby="faq-4-btn"
+              >
+                <div>
+                  <div class="accordion__panel-inner">
+                    <p>
+                      La tarifa base es de
+                      <span data-price="primaria">S/ 28</span> por hora para
+                      primaria y <span data-price="secundaria">S/ 33</span> por
+                      hora para secundaria. En clases presenciales, las
+                      condiciones de desplazamiento se coordinan previamente
+                      según la ubicación exacta.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-5-btn"
+                  aria-expanded="false"
+                  aria-controls="faq-5"
+                >
+                  ¿Cómo puedo reservar una clase?
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-5"
+                role="region"
+                aria-labelledby="faq-5-btn"
+              >
+                <div>
+                  <div class="accordion__panel-inner">
+                    <p>
+                      Escríbeme por WhatsApp al
+                      <a
+                        data-wa="general"
+                        href="https://wa.me/51952253272"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >+51 952 253 272</a
+                      >
+                      indicando el nivel del estudiante, los temas que necesita
+                      reforzar y la modalidad que prefieres. Con esa información
+                      coordinamos el horario de la clase.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-6-btn"
+                  aria-expanded="false"
+                  aria-controls="faq-6"
+                >
+                  ¿Qué necesita el estudiante para comenzar?
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-6"
+                role="region"
+                aria-labelledby="faq-6-btn"
+              >
+                <div>
+                  <div class="accordion__panel-inner">
+                    <p>
+                      Ganas de aprender y, si es posible, sus cuadernos, tareas
+                      o ejercicios del colegio para revisar los temas que le
+                      cuestan más. Para las clases virtuales se necesita un
+                      dispositivo con conexión a internet para la videollamada.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACTO ================= -->
+      <section
+        class="section contact band grid-paper"
+        id="contacto"
+        aria-labelledby="contact-title"
+        data-nav-section="contacto"
+        data-contact
+      >
+        <div class="container contact__grid">
+          <div class="contact__intro">
+            <p class="section-label" data-reveal>
+              <span class="section-label__index">09</span>Contacto
+            </p>
+            <h2 class="contact__title" id="contact-title" data-reveal>
+              ¿Necesitas apoyo con matemática?
+            </h2>
+            <p class="section-lead" data-reveal>
+              Conversemos sobre las necesidades del estudiante y coordinemos una
+              clase.
+            </p>
+
+            <dl class="contact__data" data-reveal>
+              <div class="contact__datum">
+                <dt>Profesor</dt>
+                <dd>Gefferson</dd>
+              </div>
+              <div class="contact__datum">
+                <dt>Zona</dt>
+                <dd>Villa El Salvador, Lima</dd>
+              </div>
+              <div class="contact__datum">
+                <dt>Modalidad</dt>
+                <dd>Presencial y virtual</dd>
+              </div>
+              <div class="contact__datum">
+                <dt>WhatsApp</dt>
+                <dd>
+                  <a
+                    data-wa="general"
+                    href="https://wa.me/51952253272"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >+51 952 253 272</a
+                  >
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <form
+            class="contact__builder"
+            aria-labelledby="builder-title"
+            data-wa-builder
+            data-reveal
+            style="--reveal-delay: 1"
+          >
+            <h3 class="contact__builder-title" id="builder-title">
+              Prepara tu mensaje
+            </h3>
+            <p class="note">
+              Elige el nivel y la modalidad; el mensaje se adapta
+              automáticamente.
+            </p>
+
+            <fieldset class="choice">
+              <legend class="choice__legend">Nivel del estudiante</legend>
+              <div class="choice__options">
+                <label class="choice__option">
+                  <input
+                    class="choice__input"
+                    type="radio"
+                    name="level"
+                    value="primaria"
+                  />
+                  <span class="choice__label">Primaria</span>
+                </label>
+                <label class="choice__option">
+                  <input
+                    class="choice__input"
+                    type="radio"
+                    name="level"
+                    value="secundaria"
+                  />
+                  <span class="choice__label">Secundaria</span>
+                </label>
+                <label class="choice__option">
+                  <input
+                    class="choice__input"
+                    type="radio"
+                    name="level"
+                    value=""
+                    checked
+                  />
+                  <span class="choice__label">Aún no lo sé</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="choice">
+              <legend class="choice__legend">Modalidad</legend>
+              <div class="choice__options">
+                <label class="choice__option">
+                  <input
+                    class="choice__input"
+                    type="radio"
+                    name="mode"
+                    value="presencial"
+                  />
+                  <span class="choice__label">Presencial</span>
+                </label>
+                <label class="choice__option">
+                  <input
+                    class="choice__input"
+                    type="radio"
+                    name="mode"
+                    value="virtual"
+                  />
+                  <span class="choice__label">Virtual</span>
+                </label>
+                <label class="choice__option">
+                  <input
+                    class="choice__input"
+                    type="radio"
+                    name="mode"
+                    value=""
+                    checked
+                  />
+                  <span class="choice__label">Por definir</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="contact__preview">
+              <p class="contact__preview-label">Vista previa del mensaje</p>
+              <p
+                class="contact__preview-text"
+                data-wa-preview
+                aria-live="polite"
+              >
+                Hola Gefferson, estoy interesado/a en recibir información sobre
+                tus clases particulares de matemática. Quisiera consultar la
+                disponibilidad para mi hijo/a.
+              </p>
+            </div>
+
+            <a
+              class="btn btn--primary btn--block contact__cta"
+              data-wa="general"
+              data-wa-builder-link
+              href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon icon--fill" aria-hidden="true">
+                <use href="#i-wa" />
+              </svg>
+              Escribir por WhatsApp
+            </a>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer" data-footer>
+      <div class="container">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <p class="site-footer__name">Clases con Gefferson</p>
+            <p class="site-footer__tagline">
+              Matemática con claridad, creatividad y confianza.
+            </p>
+
+            <p class="site-footer__label" id="socials-label">Encuéntrame en</p>
+            <ul class="socials" role="list" aria-labelledby="socials-label">
+              <li>
+                <a
+                  class="social"
+                  href="https://linkedin.com/in/gefferson-casasola"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="icon icon--fill social__icon" aria-hidden="true">
+                    <use href="#i-linkedin" />
+                  </svg>
+                  <span>LinkedIn</span>
+                  <svg class="icon social__arrow" aria-hidden="true">
+                    <use href="#i-arrow-ne" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="social"
+                  href="https://github.com/Geffrerson7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="icon icon--fill social__icon" aria-hidden="true">
+                    <use href="#i-github" />
+                  </svg>
+                  <span>GitHub</span>
+                  <svg class="icon social__arrow" aria-hidden="true">
+                    <use href="#i-arrow-ne" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social" href="mailto:gefferson.casasola@gmail.com">
+                  <svg class="icon social__icon" aria-hidden="true">
+                    <use href="#i-mail" />
+                  </svg>
+                  <span>Correo</span>
+                  <svg class="icon social__arrow" aria-hidden="true">
+                    <use href="#i-arrow-ne" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <nav
+            class="site-footer__nav"
+            aria-label="Navegación del pie de página"
+          >
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#sobre-mi">Sobre mí</a></li>
+              <li><a href="#clases">Clases</a></li>
+              <li><a href="#tarifas">Tarifas</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <div class="site-footer__contact">
+            <a
+              data-wa="general"
+              href="https://wa.me/51952253272"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon icon--fill" aria-hidden="true">
+                <use href="#i-wa" />
+              </svg>
+              +51 952 253 272
+            </a>
+            <p>Villa El Salvador, Lima, Perú</p>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            © <span data-year>2026</span> Clases con Gefferson. Todos los
+            derechos reservados.
+          </p>
+          <a class="link-arrow" href="#inicio">
+            Volver arriba
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-arrow-up" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp (móvil y tablet) -->
+    <a
+      class="wa-float"
+      data-wa="general"
+      data-wa-float
+      href="https://wa.me/51952253272?text=Hola%20Gefferson%2C%20estoy%20interesado%2Fa%20en%20recibir%20informaci%C3%B3n%20sobre%20tus%20clases%20particulares%20de%20matem%C3%A1tica.%20Quisiera%20consultar%20la%20disponibilidad%20para%20mi%20hijo%2Fa."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Escribir por WhatsApp a Gefferson"
+    >
+      <svg class="icon icon--fill" aria-hidden="true"><use href="#i-wa" /></svg>
+      <span aria-hidden="true">WhatsApp</span>
+    </a>
+  </body>
+</html>
